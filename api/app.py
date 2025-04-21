@@ -3,6 +3,7 @@ import csv
 import re
 from flask import Flask, render_template, request, redirect, url_for
 from duckduckgo_search import DDGS
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from search_controller import SongDatabase
 
 # figure out the folder our code lives in
