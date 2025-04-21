@@ -1,0 +1,7 @@
+body { font-family: sans-serif; padding: 2rem; }
+.search-form input { width: 60%; padding: 0.5rem; }
+.search-form select { padding: 0.5rem; margin-left: 0.5rem; }
+.search-form button { padding: 0.5rem 1rem; }
+.results { list-style: none; padding: 0; margin-top: 1rem; }
+.result-item { margin-bottom: 1.5rem; }
+.lyrics { white-space: pre-wrap; background: #f9f9f9; padding: 1rem; }

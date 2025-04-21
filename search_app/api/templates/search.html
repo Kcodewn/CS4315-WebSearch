@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Search</h2>
+  <form action="{{ url_for('search') }}" method="get" class="search-form">
+    <input
+      type="text"
+      name="q"
+      value="{{ q }}"
+      placeholder="Enter keywords…"
+      required
+    >
+    <select name="source">
+      <option value="web"   {% if source=='web' %}selected{% endif %}>Web Search</option>
+      <option value="local" {% if source=='local' %}selected{% endif %}>Local (Lyrics)</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+
+  <ul class="results">
+    {% for r in results %}
+      <li class="result-item">
+        {% if source=='web' %}
+          <a href="{{ r.url }}" target="_blank">{{ r.title|safe }}</a><br>
+          <small>{{ r.snippet|safe }}</small>
+        {% else %}
+          <a href="{{ url_for('doc', id=r.id) }}">{{ r.title }}</a><br>
+          <small>{{ r.meta }}</small><br>
+          <small>{{ r.snippet|safe }}</small>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

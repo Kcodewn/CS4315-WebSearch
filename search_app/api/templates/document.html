@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ doc.title }}</h1>
+  <p><em>{{ doc.artist }} ({{ doc.year }}) — Rank {{ doc.rank }}</em></p>
+  <pre class="lyrics">{{ doc.lyrics }}</pre>
+  <p><a href="{{ url_for('search', q='', source='local') }}">&larr; Back to search</a></p>
+{% endblock %}
