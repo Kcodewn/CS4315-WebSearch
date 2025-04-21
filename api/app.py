@@ -1,10 +1,9 @@
 import os
 import csv
-import sys
 import re
 from flask import Flask, render_template, request, redirect, url_for
 from duckduckgo_search import DDGS
-from search_controller.py import SongDatabase
+from api.search_controller import SongDatabase
 
 # figure out the folder our code lives in
 BASE_DIR       = os.path.dirname(__file__)
